@@ -1,0 +1,5 @@
+## YAML Override template
+## original/file.tpl: override/file.tpl
+---
+system/SearchModule/Resources/views/Block/search.tpl: themes/AdminLTETheme/Resources/views/modules/ZikulaSearchModule/Block/search.tpl
+system/BlocksModule/Resources/views/Block/Extmenu/topnav.tpl: themes/AdminLTETheme/Resources/views/modules/ZikulaBlocksModule/Block/Extmenu/topnav.tpl
