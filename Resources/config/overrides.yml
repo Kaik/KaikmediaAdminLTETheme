@@ -1,5 +1,6 @@
 ## YAML Override template
 ## original/file.tpl: override/file.tpl
 ---
-system/SearchModule/Resources/views/Block/search.tpl: themes/AdminLTETheme/Resources/views/modules/ZikulaSearchModule/Block/search.tpl
-system/BlocksModule/Resources/views/Block/Extmenu/topnav.tpl: themes/AdminLTETheme/Resources/views/modules/ZikulaBlocksModule/Block/Extmenu/topnav.tpl
+system/AdminModule/Resources/views/AdminInterface/header.html.twig: themes/AdminLTETheme/Resources/ZikulaAdminModule/views/AdminInterface/header.html.twig
+system/AdminModule/Resources/views/AdminInterface/modules.panel.html.twig: themes/AdminLTETheme/Resources/ZikulaAdminModule/views/AdminInterface/modules.panel.html.twig
+system/AdminModule/Resources/views/AdminInterface/categories.panel.html.twig: themes/AdminLTETheme/Resources/ZikulaAdminModule/views/AdminInterface/categories.panel.html.twig

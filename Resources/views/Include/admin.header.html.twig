@@ -34,6 +34,9 @@
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">{{ __('Toggle navigation') }}</span>
       </a>
+      <div class="col-xs-12 col-md-4">
+        <h4 class="">{{ getModVar('ZConfig', 'sitename') }} {{ __('administration') }}</h4>     
+      </div>     
       {% include 'ZikulaAdminLTETheme:Include:admin.status_bar.html.twig' %}
     </nav>
   </header>
