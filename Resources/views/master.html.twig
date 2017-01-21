@@ -1,16 +1,50 @@
-{% include 'ZikulaAdminLTETheme:Include:header.html.twig' %}
-<div id="theme_navigation_bar" class="clearfix">
-    {% set topnavblock = showblockposition('topnav') %}
-    {% if topnavblock is empty %}
-    <ul class="pull-left">
-        <li><a href="{{ pagevars.homepath }}" title="{{ __("Go to the site's home page") }}">{{ __('Home') }}</a></li>
-        <li><a href="{{ path('zikulausersmodule_user_index') }}" title="{{ __('Go to your account panel') }}">{{ __('My Account') }}</a></li>
-        <li><a href="{{ path('zikulasearchmodule_user_form') }}" title="{{ __('Search this site') }}">{{ __('Site search') }}</a></li>
-    </ul>
-    {% else %}
-    {{ topnavblock|raw }}
-    {% endif %}
-    {{ showblockposition('search') }}
-</div>
-{% include "ZikulaAdminLTETheme:Body:" ~ themevars.master ~ ".html.twig" %}
-{% include 'ZikulaAdminLTETheme:Include:footer.html.twig' %}
+{% extends "KaikmediaAdminLTETheme:Layout:" ~ themevars.layout ~ ".html.twig" %}
+{% block head %}
+    {{ parent() }}
+{% endblock %} 
+{% block status_bar %}
+    <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+            {% include 'KaikmediaAdminLTETheme:StatusBar:messages.status_bar.html.twig' %}
+            {% include 'KaikmediaAdminLTETheme:StatusBar:notifications.status_bar.html.twig' %}
+            {% include 'KaikmediaAdminLTETheme:StatusBar:tasks.status_bar.html.twig' %}        
+            {% include 'KaikmediaAdminLTETheme:StatusBar:user.status_bar.html.twig' %}
+            <!-- Control Sidebar Toggle Button -->
+            <li>
+                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            </li>
+        </ul>
+    </div>
+    {{ parent() }}
+{% endblock %}  
+{% block sidebar_content %}
+    {% include 'KaikmediaAdminLTETheme:Sidebar:user.html.twig' %}
+    {% include 'KaikmediaAdminLTETheme:Sidebar:search.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {{ parent() }} 
+{% endblock %}
+{% block body %}   
+    {{ parent() }}     
+{% endblock %} 
+{% block content %}
+    {{ parent() }}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+        {{ moduleHeader() }}
+        </section>  
+        <!-- Main content -->
+        <section class="content">
+            {% include "KaikmediaAdminLTETheme:Body:" ~ themevars.admin ~ ".html.twig" %}
+            <!-- /.row (main row) -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}

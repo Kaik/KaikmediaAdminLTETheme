@@ -1,17 +1,17 @@
 {
-	"name" : "zikula/adminlte-theme",
-	"version" : "1.0.0",
+	"name" : "kaikmedia/adminlte-theme",
+	"version" : "1.0.1",
 	"description" : "Admin theme based on the theme AdminLTE",
 	"type" : "zikula-theme",
 	"license" : "LGPL-3.0+",
 	"authors" : [{
-			"name" : "Zikula",
-			"homepage" : "http://zikula.org/"
+			"name" : "Karol Kijak",
+			"homepage" : "http://kaikmedia.com/"
 		}
 	],
 	"autoload" : {
 		"psr-4" : {
-			"Zikula\\AdminLTETheme\\" : ""
+			"Kaikmedia\\AdminLTETheme\\" : ""
 		}
 	},
 	"require" : {
@@ -19,11 +19,11 @@
 	},
 	"extra" : {
 		"zikula" : {
-			"core-compatibility" : ">=1.4.1",
-			"class" : "Zikula\\AdminLTETheme\\ZikulaAdminLTETheme",
+			"core-compatibility" : ">=1.4.4",
+			"class" : "Kaikmedia\\AdminLTETheme\\KaikmediaAdminLTETheme",
 			"displayname" : "AdminLTE",
 			"capabilities" : {
-				"user" : false,
+				"user" : true,
 				"admin" : true
 			}
 		}

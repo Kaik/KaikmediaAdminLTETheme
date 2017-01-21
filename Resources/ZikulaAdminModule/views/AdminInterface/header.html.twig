@@ -1,4 +1,10 @@
-{{ adminBreadcrumbs() }}
-{{ pageAddAsset('javascript', zasset('@ZikulaAdminModule:js/admin_admin_systemnotices.js')) }}
+{{ pageAddAsset('javascript', zasset('@ZikulaAdminModule:js/ZikulaAdminModule.SystemNotices.js')) }}
+<div class="clearfix hidden-xs" style="margin-top:20px;">
+    {{ adminSecurityAnalyzer() }}
+    {{ adminDeveloperNotices() }}
+    {{ adminUpdateCheck() }}
+</div>
+{{ showflashes() }}
+{{ adminMenu('categories') }}
 <div class="z-admin-content clearfix">
-{{ moduleHeader('admin') }}
+    {{ moduleHeader('admin', '', '', false, false, false, true) }}

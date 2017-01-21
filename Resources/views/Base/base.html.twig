@@ -6,6 +6,16 @@
         <meta name="description" content="{{ pagevars.meta.description }}" />
         <meta name="keywords" content="{{ pagevars.meta.keywords }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
-        {{ pageAddAsset('stylesheet', zasset('@ZikulaAdminLTETheme:css/style.css')) }}
+        {{ pageAddAsset('stylesheet', zasset('@KaikmediaAdminLTETheme:css/style.css')) }}
+        {#            {% block title %}{{ pageSetVar('title', title|default('Base title')) }}{% endblock %}     #}
+        {% block head %}
+        {% endblock %}
     </head>
-    <body>
+    {% block body %}<body>
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+        {% block footer %}
+        {% endblock %}
+    </body>
+</html>

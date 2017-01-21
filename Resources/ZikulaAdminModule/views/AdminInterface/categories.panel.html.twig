@@ -19,14 +19,14 @@
 	{% for category in adminMenu %} 
 		<li class="treeview">
 			<a href="{{ category.url }}" >
-			{{ category.title }}<i class="fa fa-angle-left pull-right"></i>
+                           <i class="fa fa-angle-right"></i> <span>{{ category.title }}<span>  <i class="fa fa-angle-left pull-right"></i>
 			</a>	
 	    	{% if category.modules|length > 0 %}
     			<ul class="treeview-menu">
 					{% for module in category.modules %} 
 					<li class="treeview">
 						<a href="{{ module.menutexturl }}" >
-	 						<img src="/{{ module.icon }}" style="height:18px;"/> {{ module.menutext }}	<i class="fa fa-angle-left pull-right"></i>
+                                                    <img src="{{ module.icon }}" style="height:18px;"/> <span>{{ module.menutext }}</span> <i class="fa fa-angle-left pull-right"></i>
 							</a>	
     						{% if module.links|length > 0 %}
     						<ul class="treeview-menu">

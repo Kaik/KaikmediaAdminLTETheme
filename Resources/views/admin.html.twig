@@ -1,4 +1,56 @@
-{% include 'ZikulaAdminLTETheme:Include:admin.header.html.twig' %}
-{% include 'ZikulaAdminLTETheme:Include:admin.main_menu.html.twig' %}
-{% include "ZikulaAdminLTETheme:Body:" ~ themevars.admin ~ ".html.twig" %}
-{% include 'ZikulaAdminLTETheme:Include:admin.footer.html.twig' %}
+{% extends "KaikmediaAdminLTETheme:Layout:" ~ themevars.layout ~ ".html.twig" %}
+{% block head %}
+    {{ parent() }}
+{% endblock %} 
+{% block status_bar %}
+    <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+            {% include 'KaikmediaAdminLTETheme:StatusBar:messages.status_bar.html.twig' %}
+            {% include 'KaikmediaAdminLTETheme:StatusBar:notifications.status_bar.html.twig' %}
+            {% include 'KaikmediaAdminLTETheme:StatusBar:tasks.status_bar.html.twig' %}        
+            {% include 'KaikmediaAdminLTETheme:StatusBar:user.status_bar.html.twig' %}
+            <!-- Control Sidebar Toggle Button -->
+            <li>
+                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            </li>
+        </ul>
+    </div>
+    {{ parent() }}
+{% endblock %}  
+{% block sidebar_content %}
+    {% include 'KaikmediaAdminLTETheme:Sidebar:user.html.twig' %}
+    {% include 'KaikmediaAdminLTETheme:Sidebar:search.html.twig' %}
+    {{ adminPanelMenu() }}
+{% endblock %}
+{% block sidebar %}
+    {{ parent() }} 
+{% endblock %}
+{% block body %}   
+    {{ parent() }}     
+{% endblock %} 
+{% block content %}
+    {{ parent() }}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                {{ pagevars.title|default(__('Administration')) }}
+                <small></small>
+            </h1>
+            {{ adminBreadcrumbs() }}
+            <div class="clearfix"> <br /></div> 
+        </section>  
+        <!-- Main content -->
+        <section class="content">
+            {% include "KaikmediaAdminLTETheme:Body:" ~ themevars.admin ~ ".html.twig" %}
+            <!-- /.row (main row) -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
