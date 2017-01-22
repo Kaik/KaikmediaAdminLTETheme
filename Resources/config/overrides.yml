@@ -10,3 +10,4 @@
 #system/AdminModule/Resources/views/AdminInterface/modules.panel.html.twig: themes/kaikmedia/adminlte-theme/Resources/KaikmediaAdminModule/views/AdminInterface/modules.panel.html.twig
 #system/AdminModule/Resources/views/AdminInterface/categories.panel.html.twig: themes/kaikmedia/adminlte-theme/Resources/KaikmediaAdminModule/views/AdminInterface/categories.panel.html.twig
 #system/AdminModule/Resources/views/AdminInterface/breadCrumbs.html.twig: themes/kaikmedia/adminlte-theme/Resources/KaikmediaAdminModule/views/AdminInterface/breadCrumbs.html.twig.html.twig
+#system/ZAuthModule/Resources/views/Authentication/UnameLogin.html.twig: themes/kaikmedia/adminlte-theme/Resources/ZikulaZAuthModule/views/Authentication/UnameLogin.html.twig

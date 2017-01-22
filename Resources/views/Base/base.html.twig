@@ -6,10 +6,11 @@
         <meta name="description" content="{{ pagevars.meta.description }}" />
         <meta name="keywords" content="{{ pagevars.meta.keywords }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
-        {{ pageAddAsset('stylesheet', zasset('@KaikmediaAdminLTETheme:css/style.css')) }}
         {#            {% block title %}{{ pageSetVar('title', title|default('Base title')) }}{% endblock %}     #}
         {% block head %}
         {% endblock %}
+        {#  we want it to be the last ones to override some module styles      #}
+        <link href="{{ pageAddAsset('stylesheet', zasset("@KaikmediaAdminLTETheme:css/style.css"), 200)  }}" rel="stylesheet" type="text/css" />
     </head>
     {% block body %}<body>
         {% endblock %}

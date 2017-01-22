@@ -9,4 +9,5 @@
     {% if image %}<img src="{{ image }}" alt="{{ title }}" class="z-floatleft" />{% endif %}
     {% if title %}<h2>{{ title }}</h2>{% endif %}
 </div>
+<div class="plain-box-body">
 {% if not menufirst %}{{ moduleLinks(type) }}{% endif %}

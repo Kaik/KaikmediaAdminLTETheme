@@ -1,0 +1,11 @@
+.col-centered {
+    float: none;
+    margin: 7% auto;
+}
+/*  looks better  */
+div.z-accountlink {
+    text-align: center;
+    float: left;
+    height : auto;
+    margin-bottom: 15px;
+}
