@@ -6,7 +6,7 @@
 {{ polyfill() }}
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>Admin</b>LTE</a>
+        <a href="#">KaikMedia<b>Admin</b>LTE</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
@@ -18,13 +18,13 @@
             <div class="form-group has-feedback">
                 {{ form_widget(form.uname, {
             'input_group' : {'right': '<i class="fa fa-user fa-fw"></i>'},
-            'attr': {'class': "", 'placeholder': __('Username')} 
+            'attr': {'class': "", 'placeholder': __('Username')}
         }) }}
             </div>
             <div class="form-group has-feedback">
                 {{ form_widget(form.pass, {
             'input_group' : {'right': '<i class="fa fa-key fa-fw"></i>'},
-            'attr': {'class': "", 'placeholder': __('Password')} 
+            'attr': {'class': "", 'placeholder': __('Password')}
         }) }}
             </div>
         </div>
@@ -32,7 +32,7 @@
             <div class="col-xs-8">
                 {#   this is baaad :) but works #}
                 {{ form_widget(form.rememberme, {
-            'attr': {'class': 'col-md-3'} 
+            'attr': {'class': 'col-md-3'}
         }) }}
                 <label for="zikulazauthmodule_authentication_uname_rememberme">{{ __('Remember me') }}</label>
             </div>
@@ -43,14 +43,14 @@
             <!-- /.col -->
         </div>
         {# every login form must implement this event and hook call #}
-        <div id="zikulausersmodule-login-event-display">
-            {% set eventDatas = dispatchEvent(constant('Zikula\\UsersModule\\AccessEvents::LOGIN_FORM')) %}
-            {% for eventData in eventDatas %}
-                {{ eventData }}
-            {% endfor %}
-        </div>
+        {#        <div id="zikulausersmodule-login-event-display">
+                    {% set eventDatas = dispatchEvent(constant('Zikula\\UsersModule\\AccessEvents::LOGIN_FORM')) %}
+                    {% for eventData in eventDatas %}
+                        {{ eventData }}
+                    {% endfor %}
+                </div>#}
         <div id="zikulausersmodule-login-hooks">
-            {% set hooks = notifyDisplayHooks(constant('Zikula\\UsersModule\\Container\\HookContainer::LOGIN_FORM')) %}
+            {% set hooks = notifyDisplayHooks(constant('Zikula\\UsersModule\\HookSubscriber\\LoginUiHooksSubscriber::LOGIN_FORM')) %}
             {% for hook in hooks %}
                 {{ hook }}
             {% endfor %}
@@ -62,3 +62,33 @@
     </div>
     <!-- /.login-box-body -->
 </div>
+
+{#{% form_theme form with [
+'ZikulaFormExtensionBundle:Form:bootstrap_3_zikula_admin_layout.html.twig',
+'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig',
+'KaikmediaAdminLTETheme:Form:checkbox.html.twig',
+] %}
+<h2>{{ __('User login') }}</h2>
+{{ pageSetVar('title', __('User login')) }}
+
+<div class="well">
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.uname) }}
+    {{ form_row(form.pass) }}
+    {{ form_row(form.rememberme) }}
+
+    {% for additional_template in additional_templates %}
+        {{ include(additional_template.0, additional_template.1, ignore_missing = true) }}
+    {% endfor %}
+    <div id="zikulausersmodule-login-hooks">
+        {% set hooks = notifyDisplayHooks(constant('Zikula\\UsersModule\\HookSubscriber\\LoginUiHooksSubscriber::LOGIN_FORM')) %}
+        {% for hook in hooks %}
+            {{ hook|raw }}
+        {% endfor %}
+    </div>
+
+    {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+</div>
+#}

@@ -35,15 +35,6 @@
         {{ parent() }}
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                {#                <h1>
-                                    {{ pagevars.title|default(__('Administration')) }}
-                                    <small></small>
-                                </h1>#}
-                {{ adminBreadcrumbs() }}
-                <div class="clearfix"> <br /></div>
-            </section>  
             <!-- Main content -->
             <section class="content">
                 {% include "KaikmediaAdminLTETheme:Body:" ~ themevars.admin_body ~ ".html.twig" %}

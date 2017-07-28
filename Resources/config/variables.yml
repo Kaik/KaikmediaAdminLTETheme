@@ -72,7 +72,7 @@ master_body:
       'Plain': plain
       
 home_layout:
-  default_value: 
+  default_value: plain-page
   type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
   options:
     choices_as_values: true
@@ -82,6 +82,7 @@ home_layout:
       'Boxed': layout-boxed
       'Fixed': fixed
       'Collapsed sidebar': sidebar-collapse
+      'Plain': plain-page
       
 home_skin:
   default_value: skin-blue

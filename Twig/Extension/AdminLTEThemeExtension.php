@@ -18,8 +18,18 @@ class AdminLTEThemeExtension extends \Twig_Extension
     {
     }
 
-    public function getName()
+    public function getFunctions()
     {
-        return 'adminlte_extension';
+        return ['registeredCount' => new \Twig_Function_Method($this, 'registeredCount', array('is_safe' => array('html')))
+        ];
+    }
+
+    /**
+     * @param $string
+     * @return string
+     */
+    public function registeredCount()
+    {
+        return 88;
     }
 }
