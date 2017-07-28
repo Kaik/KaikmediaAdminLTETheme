@@ -1,48 +1,150 @@
 ##
 # KaikmediaAdminLTETheme variables
 ##
-layout:
-  default_value: 
-  type: choice
+#layout:
+#  default_value: default
+#  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
+#  options:
+#    choices_as_values: true
+#    choices:
+#      'Default': default
+#      'Top Navigation': layout-top-nav
+#      'Boxed': layout-boxed
+#      'Fixed': fixed
+#      'Collapsed sidebar': sidebar-collapse
+#skin:
+#  default_value: skin-blue
+#  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
+#  options:
+#    choices_as_values: true
+#    choices:
+#      'Blue': skin-blue
+#      'Blue light': skin-blue-light
+#      'Yellow': skin-yellow
+#      'Yellow light': skin-yellow-light
+#      'Green': skin-green
+#      'Green light': skin-green-light
+#      'Purple': skin-purple
+#      'Purple light': skin-purple-light     
+#      'Red': skin-red
+#      'Red light': skin-red-light
+#      'Black': skin-black
+#      'Black light': skin-black-light     
+     
+# master is Default
+master_layout: 
+  default_value: default
+  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
   options:
+    choices_as_values: true
     choices:
-      default: Default
-      layout-top-nav: Top Navigation
-      layout-boxed: Boxed
-      fixed: Fixed
-      sidebar-collapse: Collapsed sidebar
-skin:
+      'Default': default
+      'Top Navigation': layout-top-nav
+      'Boxed': layout-boxed
+      'Fixed': fixed
+      'Collapsed sidebar': sidebar-collapse
+      
+master_skin:
   default_value: skin-blue
-  type: choice
+  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
   options:
+    choices_as_values: true
     choices:
-      skin-blue: Blue
-      skin-blue-light: Blue light
-      skin-yellow: Yellow
-      skin-yellow-light: Yellow light
-      skin-green: Green
-      skin-green-light: Green light
-      skin-purple: Purple
-      skin-purple-light: Purple light      
-      skin-red: Red
-      skin-red-light: Red light
-      skin-black: Black
-      skin-black-light: Black light      
-home:
-  default_value: 1col
-  type: choice
+      'Blue': skin-blue
+      'Blue light': skin-blue-light
+      'Yellow': skin-yellow
+      'Yellow light': skin-yellow-light
+      'Green': skin-green
+      'Green light': skin-green-light
+      'Purple': skin-purple
+      'Purple light': skin-purple-light     
+      'Red': skin-red
+      'Red light': skin-red-light
+      'Black': skin-black
+      'Black light': skin-black-light
+      
+master_body:
+  default_value: plain
+  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
   options:
+    choices_as_values: true
     choices:
-      1col: 1 Column  
-master:
-  default_value: 1col
-  type: choice
+      'Plain': plain
+      
+home_layout:
+  default_value: 
+  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
   options:
+    choices_as_values: true
     choices:
-      1col: 1 Column
-admin:
-  default_value: 1col
-  type: choice
+      'Default': default
+      'Top Navigation': layout-top-nav
+      'Boxed': layout-boxed
+      'Fixed': fixed
+      'Collapsed sidebar': sidebar-collapse
+      
+home_skin:
+  default_value: skin-blue
+  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
   options:
+    choices_as_values: true
     choices:
-      1col: 1 Column
+      'Blue': skin-blue
+      'Blue light': skin-blue-light
+      'Yellow': skin-yellow
+      'Yellow light': skin-yellow-light
+      'Green': skin-green
+      'Green light': skin-green-light
+      'Purple': skin-purple
+      'Purple light': skin-purple-light     
+      'Red': skin-red
+      'Red light': skin-red-light
+      'Black': skin-black
+      'Black light': skin-black-light 
+
+home_body:
+  default_value: plain
+  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
+  options:
+    choices_as_values: true
+    choices:
+      'Plain': plain
+
+admin_layout:
+  default_value: 
+  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
+  options:
+    choices_as_values: true
+    choices:
+      'Default': default
+      'Top Navigation': layout-top-nav
+      'Boxed': layout-boxed
+      'Fixed': fixed
+      'Collapsed sidebar': sidebar-collapse
+      
+admin_skin:
+  default_value: skin-blue
+  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
+  options:
+    choices_as_values: true
+    choices:
+      'Blue': skin-blue
+      'Blue light': skin-blue-light
+      'Yellow': skin-yellow
+      'Yellow light': skin-yellow-light
+      'Green': skin-green
+      'Green light': skin-green-light
+      'Purple': skin-purple
+      'Purple light': skin-purple-light     
+      'Red': skin-red
+      'Red light': skin-red-light
+      'Black': skin-black
+      'Black light': skin-black-light
+
+admin_body:
+  default_value: plain
+  type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
+  options:
+    choices_as_values: true
+    choices:
+      'Plain': plain

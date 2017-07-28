@@ -1,56 +1,58 @@
-{% extends "KaikmediaAdminLTETheme:Layout:" ~ themevars.layout ~ ".html.twig" %}
+{% extends "KaikmediaAdminLTETheme:Layout:" ~ themevars.admin_layout ~ ".html.twig" %}
+{#{% extends "KaikmediaAdminLTETheme:Layout:default.html.twig" %}#}
 {% block head %}
     {{ parent() }}
-{% endblock %} 
-{% block status_bar %}
-    <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-            {% include 'KaikmediaAdminLTETheme:StatusBar:messages.status_bar.html.twig' %}
-            {% include 'KaikmediaAdminLTETheme:StatusBar:notifications.status_bar.html.twig' %}
-            {% include 'KaikmediaAdminLTETheme:StatusBar:tasks.status_bar.html.twig' %}        
-            {% include 'KaikmediaAdminLTETheme:StatusBar:user.status_bar.html.twig' %}
-            <!-- Control Sidebar Toggle Button -->
-            <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-            </li>
-        </ul>
-    </div>
-    {{ parent() }}
-{% endblock %}  
-{% block sidebar_content %}
-    {% include 'KaikmediaAdminLTETheme:Sidebar:user.html.twig' %}
-    {% include 'KaikmediaAdminLTETheme:Sidebar:search.html.twig' %}
-    {{ adminPanelMenu() }}
+    <link href="{{ pageAddAsset('stylesheet', zasset("almasaeed2010/adminlte/dist/css/skins/#{themevars.admin_skin}.min.css"), 98)  }}" rel="stylesheet" type="text/css" />
 {% endblock %}
-{% block sidebar %}
-    {{ parent() }} 
-{% endblock %}
-{% block body %}   
-    {{ parent() }}     
-{% endblock %} 
-{% block content %}
-    {{ parent() }}
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                {{ pagevars.title|default(__('Administration')) }}
-                <small></small>
-            </h1>
-            {{ adminBreadcrumbs() }}
-            <div class="clearfix"> <br /></div> 
-        </section>  
-        <!-- Main content -->
-        <section class="content">
-            {% include "KaikmediaAdminLTETheme:Body:" ~ themevars.admin ~ ".html.twig" %}
-            <!-- /.row (main row) -->
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-{% endblock %}
+{% block body %}
+    <body class="hold-transition {{ themevars.admin_skin }} {{ themevars.admin_layout }} sidebar-mini">
+    {% endblock %}
+    {% block status_bar %}
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                {% include 'KaikmediaAdminLTETheme:StatusBar:messages.status_bar.html.twig' %}
+                {% include 'KaikmediaAdminLTETheme:StatusBar:notifications.status_bar.html.twig' %}
+                {% include 'KaikmediaAdminLTETheme:StatusBar:tasks.status_bar.html.twig' %}        
+                {% include 'KaikmediaAdminLTETheme:StatusBar:user.status_bar.html.twig' %}
+                <!-- Control Sidebar Toggle Button -->
+                <li>
+                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                </li>
+            </ul>
+        </div>
+        {{ parent() }}
+    {% endblock %}  
+    {% block sidebar_content %}
+        {% include 'KaikmediaAdminLTETheme:Sidebar:user.html.twig' %}
+        {% include 'KaikmediaAdminLTETheme:Sidebar:search.html.twig' %}
+        {{ adminPanelMenu() }}
+    {% endblock %}
+    {% block sidebar %}
+        {{ parent() }} 
+    {% endblock %}
+    {% block content %}
+        {{ parent() }}
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    {{ pagevars.title|default(__('Administration')) }}
+                    <small></small>
+                </h1>
+                {{ adminBreadcrumbs() }}
+                <div class="clearfix"> <br /></div> 
+            </section>  
+            <!-- Main content -->
+            <section class="content">
+                {% include "KaikmediaAdminLTETheme:Body:" ~ themevars.admin_body ~ ".html.twig" %}
+                <!-- /.row (main row) -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+    {% endblock %}
 
-{% block footer %}
-    {{ parent() }}
-{% endblock %}
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}

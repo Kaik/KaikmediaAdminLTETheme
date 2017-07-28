@@ -1,26 +1,28 @@
-{% extends 'KaikmediaAdminLTETheme:Base:base.html.twig' %}
+{% extends "KaikmediaAdminLTETheme:Layout:" ~ themevars.home_layout ~ ".html.twig" %}
 {% block head %}
-    <link href=" {{ pageAddAsset('stylesheet', zasset('@KaikmediaAdminLTETheme:adminlte/dist/css/AdminLTE.min.css'), 98) }}" rel="stylesheet" type="text/css" />
-    <link href="{{ pageAddAsset('stylesheet', zasset("@KaikmediaAdminLTETheme:adminlte/dist/css/skins/#{themevars.skin}.min.css"), 98)  }}" rel="stylesheet" type="text/css" />
-    <link href="{{ pageAddAsset('stylesheet', zasset("@KaikmediaAdminLTETheme:adminlte/plugins/iCheck/square/blue.css"), 98)  }}" rel="stylesheet" type="text/css" />   
+    <link href=" {{ pageAddAsset('stylesheet', zasset('almasaeed2010/adminlte/dist/css/AdminLTE.min.css'), 98) }}" rel="stylesheet" type="text/css" />
+    <link href="{{ pageAddAsset('stylesheet', zasset("almasaeed2010/adminlte/dist/css/skins/#{themevars.home_skin}.min.css"), 98)  }}" rel="stylesheet" type="text/css" />
+    <link href="{{ pageAddAsset('stylesheet', zasset("almasaeed2010/adminlte/plugins/iCheck/square/blue.css"), 98)  }}" rel="stylesheet" type="text/css" />
 {% endblock %} 
 {% block body %}
-    <body class="hold-transition login-page">
+    <body class="hold-transition {{ themevars.home_skin }} {{ themevars.home_layout }} sidebar-mini">
     {% endblock %}
     {% block content %}
+        {{ parent() }}
         {% if currentUser.loggedIn %}
             <div class="login-box">
                 <div class="login-logo">
-                    <a href="#"><b>Admin</b>LTE</a>
+                    <a href="#">KaikMedia<b>Admin</b>LTE</a>
                 </div>
                 <a href="{{ path('zikulausersmodule_account_menu') }}" class="btn btn-block btn-primary btn-lg">{{ __('Go to your account') }}</a>
             </div>         
         {% else %}    
             {{ render(controller('ZikulaUsersModule:Access:login')) }}
         {% endif %}
+
     {% endblock %}
     {% block footer %}
-        <script src="{{ pageAddAsset('javascript', zasset('@KaikmediaAdminLTETheme:adminlte/plugins/iCheck/icheck.min.js'), 98)  }}"></script>
+        <script src="{{ pageAddAsset('javascript', zasset('almasaeed2010/adminlte/plugins/iCheck/icheck.min.js'), 98)  }}"></script>
         <script>
             (function ($) {
                 $(function () {
