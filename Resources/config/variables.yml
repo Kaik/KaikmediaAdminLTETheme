@@ -112,7 +112,7 @@ home_body:
       'Plain': plain
 
 admin_layout:
-  default_value: 
+  default_value: fixed
   type: 'Symfony\Component\Form\Extension\Core\Type\ChoiceType'
   options:
     choices_as_values: true
