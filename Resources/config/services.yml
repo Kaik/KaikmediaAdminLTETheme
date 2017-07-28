@@ -1,0 +1,5 @@
+services:
+    kaikmedia_adminlte_theme.twig.adminlte_theme_extension:
+        class: Kaikmedia\AdminLTETheme\Twig\Extension\AdminLTEThemeExtension
+        tags:
+            - { name: twig.extension }

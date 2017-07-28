@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright Zikula Foundation 2015 - Zikula Application Framework
  *
@@ -11,7 +12,7 @@
  * information regarding copyright and licensing.
  */
 
-namespace Kaikmedia\KMTheme\DependencyInjection;
+namespace Kaikmedia\AdminLTETheme\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
