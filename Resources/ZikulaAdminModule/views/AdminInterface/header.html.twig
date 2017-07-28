@@ -1,10 +1,11 @@
 {{ pageAddAsset('javascript', zasset('@ZikulaAdminModule:js/ZikulaAdminModule.SystemNotices.js')) }}
-<div class="clearfix hidden-xs" style="margin-top:20px;">
+
+{#<div class="clearfix hidden-xs" style="margin-top:20px;">
     {{ adminSecurityAnalyzer() }}
     {{ adminDeveloperNotices() }}
     {{ adminUpdateCheck() }}
-</div>
+</div>#}
 {{ showflashes() }}
-{{ adminMenu('categories') }}
+{#{{ adminMenu('categories') }}#}
 <div class="z-admin-content clearfix">
     {{ moduleHeader('admin', '', '', false, false, false, true) }}

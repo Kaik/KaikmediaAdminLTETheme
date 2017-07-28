@@ -8,12 +8,13 @@
     <body class="hold-transition {{ themevars.admin_skin }} {{ themevars.admin_layout }} sidebar-mini">
     {% endblock %}
     {% block status_bar %}
+        {{ adminMenu('categories') }}
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                {% include 'KaikmediaAdminLTETheme:StatusBar:messages.status_bar.html.twig' %}
-                {% include 'KaikmediaAdminLTETheme:StatusBar:notifications.status_bar.html.twig' %}
-                {% include 'KaikmediaAdminLTETheme:StatusBar:tasks.status_bar.html.twig' %}        
-                {% include 'KaikmediaAdminLTETheme:StatusBar:user.status_bar.html.twig' %}
+                {% include 'KaikmediaAdminLTETheme:StatusBar:admin.messages.html.twig' %}
+                {% include 'KaikmediaAdminLTETheme:StatusBar:admin.notifications.html.twig' %}
+                {% include 'KaikmediaAdminLTETheme:StatusBar:admin.tasks.html.twig' %}
+                {% include 'KaikmediaAdminLTETheme:StatusBar:admin.user.html.twig' %}
                 <!-- Control Sidebar Toggle Button -->
                 <li>
                     <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
@@ -36,12 +37,12 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>
-                    {{ pagevars.title|default(__('Administration')) }}
-                    <small></small>
-                </h1>
+                {#                <h1>
+                                    {{ pagevars.title|default(__('Administration')) }}
+                                    <small></small>
+                                </h1>#}
                 {{ adminBreadcrumbs() }}
-                <div class="clearfix"> <br /></div> 
+                <div class="clearfix"> <br /></div>
             </section>  
             <!-- Main content -->
             <section class="content">
