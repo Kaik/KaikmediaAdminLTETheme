@@ -53,5 +53,8 @@
     {% endblock %}
 
     {% block footer %}
+        {% block control_sidebar_content %}
+
+        {% endblock %}
         {{ parent() }}
     {% endblock %}
