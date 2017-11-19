@@ -18,3 +18,7 @@ div.z-accountlink {
     /*border-top: solid;*/
     padding: 5px 1%;
 }
+
+.small-box h3 {
+    color: #fff;
+}
