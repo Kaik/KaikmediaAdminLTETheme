@@ -11,9 +11,16 @@
         {{ adminMenu('categories') }}
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                {% include 'KaikmediaAdminLTETheme:StatusBar:admin.messages.html.twig' %}
-                {% include 'KaikmediaAdminLTETheme:StatusBar:admin.notifications.html.twig' %}
-                {% include 'KaikmediaAdminLTETheme:StatusBar:admin.tasks.html.twig' %}
+                {{ include('@ZikulaAdminModule/Admin/systemNotices.html.twig') }}
+                {% if getSystemVar('messagemodule', FALSE) %}
+                    {% include 'KaikmediaAdminLTETheme:StatusBar:admin.messages.html.twig' %}
+                {% endif %}
+                {% if getSystemVar('messagemodule', FALSE) %}
+                    {% include 'KaikmediaAdminLTETheme:StatusBar:admin.notifications.html.twig' %}
+                {% endif %}
+                {% if getSystemVar('messagemodule', FALSE) %}
+                    {% include 'KaikmediaAdminLTETheme:StatusBar:admin.tasks.html.twig' %}
+                {% endif %}
                 {% include 'KaikmediaAdminLTETheme:StatusBar:admin.user.html.twig' %}
                 <!-- Control Sidebar Toggle Button -->
                 <li>
@@ -24,7 +31,7 @@
         {{ parent() }}
     {% endblock %}  
     {% block sidebar_content %}
-        {% include 'KaikmediaAdminLTETheme:Sidebar:user.html.twig' %}
+        {#        {% include 'KaikmediaAdminLTETheme:Sidebar:user.html.twig' %}#}
         {% include 'KaikmediaAdminLTETheme:Sidebar:search.html.twig' %}
         {{ adminPanelMenu() }}
     {% endblock %}

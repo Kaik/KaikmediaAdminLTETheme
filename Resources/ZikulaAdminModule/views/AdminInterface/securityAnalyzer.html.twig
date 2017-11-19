@@ -1,0 +1,45 @@
+{% set adminHelpUrl = path('zikulaadminmodule_admin_help') %}
+{% if hasPermission('ZikulaAdminModule::', '::', 'ACCESS_ADMIN') %}
+    {% if not security.scactive %}
+        <!-- Notifications: style can be found in dropdown.less -->
+        <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-shield text-danger"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="header">{{ __('Security analyzer') }}</li>
+                <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                        <li>
+                            <div class="col-sm-12">
+                                <h4>{{ __('Security warnings') }}</h4>
+                                {% if not security.app_htaccess %}
+                                    <p>
+                                        <a href="{{ adminHelpUrl }}#admin_app_htaccess_warning">{{ __("There is no '.htaccess' file in the application directory '/app', but one should be present.") }}</a>
+                                    </p>
+                                {% endif %}
+                                {% if not security.updatecheck %}
+                                    <p>
+                                        {{ __('The update check is not enabled, but preferably should be.') }}
+                                    </p>
+                                {% endif %}
+                                {% if not security.scactive %}
+                                    <p>
+                                        <a href="{{ adminHelpUrl }}#admin_security_center_warning2">{{ __("Security center module is not installed, but preferably should be.") }}</a>
+                                    </p>
+                                {% endif %}
+                                {% if security.useids and security.idssoftblock %}
+                                    <p>
+                                        <a href="{{ adminHelpUrl }}#admin_idssoftblock_warning">{{ __("PHPIDS is activated, but requests are NOT blocked.") }}</a>
+                                    </p>
+                                {% endif %}
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="footer"><a href="{{ adminHelpUrl }}">{{ __('Help') }}</a></li>
+            </ul>
+        </li>
+    {% endif %}
+{% endif %}

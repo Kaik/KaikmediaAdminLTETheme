@@ -19,53 +19,53 @@ master:
       center: "Block:block.html.twig"
       topnav: "Block:topnavblock.html.twig"
       search: "Block:searchblock.html.twig"
-home:
-  page: ":home.html.twig"
-  block:
-    positions:
-      left: "Block:block.html.twig"
-      right: "Block:block.html.twig"
-      center: "Block:block.html.twig"
-      topnav: "Block:topnavblock.html.twig"
-      search: "Block:searchblock.html.twig"
-users:
-  pattern: ZikulaUsersModule
-  page: ":users.html.twig"
-  block:
-    positions:
-      left: "Block:block.html.twig"
-      right: "Block:block.html.twig"
-      center: "Block:block.html.twig"
-      topnav: "Block:topnavblock.html.twig"
-      search: "Block:searchblock.html.twig"
-login:
-  pattern: /login
-  page: ":login.html.twig"
-  block:
-    positions:
-      left: "Block:block.html.twig"
-      right: "Block:block.html.twig"
-      center: "Block:block.html.twig"
-      topnav: "Block:topnavblock.html.twig"
-      search: "Block:searchblock.html.twig"
-register:
-  pattern: /register
-  page: ":register.html.twig"
-  block:
-    positions:
-      left: "Block:block.html.twig"
-      right: "Block:block.html.twig"
-      center: "Block:block.html.twig"
-      topnav: "Block:topnavblock.html.twig"
-      search: "Block:searchblock.html.twig"
-
-auth:
-  pattern: ZikulaZAuthModule
-  page: ":users.html.twig"
-  block:
-    positions:
-      left: "Block:block.html.twig"
-      right: "Block:block.html.twig"
-      center: "Block:block.html.twig"
-      topnav: "Block:topnavblock.html.twig"
-      search: "Block:searchblock.html.twig"
+#home:
+#  page: ":home.html.twig"
+#  block:
+#    positions:
+#      left: "Block:block.html.twig"
+#      right: "Block:block.html.twig"
+#      center: "Block:block.html.twig"
+#      topnav: "Block:topnavblock.html.twig"
+#      search: "Block:searchblock.html.twig"
+#users:
+#  pattern: ZikulaUsersModule
+#  page: ":users.html.twig"
+#  block:
+#    positions:
+#      left: "Block:block.html.twig"
+#      right: "Block:block.html.twig"
+#      center: "Block:block.html.twig"
+#      topnav: "Block:topnavblock.html.twig"
+#      search: "Block:searchblock.html.twig"
+#login:
+#  pattern: /login
+#  page: ":login.html.twig"
+#  block:
+#    positions:
+#      left: "Block:block.html.twig"
+#      right: "Block:block.html.twig"
+#      center: "Block:block.html.twig"
+#      topnav: "Block:topnavblock.html.twig"
+#      search: "Block:searchblock.html.twig"
+#register:
+#  pattern: /register
+#  page: ":register.html.twig"
+#  block:
+#    positions:
+#      left: "Block:block.html.twig"
+#      right: "Block:block.html.twig"
+#      center: "Block:block.html.twig"
+#      topnav: "Block:topnavblock.html.twig"
+#      search: "Block:searchblock.html.twig"
+#
+#auth:
+#  pattern: ZikulaZAuthModule
+#  page: ":users.html.twig"
+#  block:
+#    positions:
+#      left: "Block:block.html.twig"
+#      right: "Block:block.html.twig"
+#      center: "Block:block.html.twig"
+#      topnav: "Block:topnavblock.html.twig"
+#      search: "Block:searchblock.html.twig"
