@@ -8,9 +8,23 @@
     <body class="hold-transition {{ themevars.admin_skin }} {{ themevars.admin_layout }} sidebar-mini">
     {% endblock %}
     {% block status_bar %}
+        <div class="col-md-8">
         {{ adminMenu('categories') }}
+        </div>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
+                <li>
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <span class="sr-only">{{ __('Toggle navigation') }}</span>
+                    </a>
+                </li>
+                <li>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#admintabs-container" aria-expanded="false">
+                       <span class="sr-only">Toggle navigation</span>
+                       <i class="fa fa-sitemap" aria-hidden="true"></i>
+                </button>
+                </li>
                 {{ include('@ZikulaAdminModule/Admin/systemNotices.html.twig') }}
                 {% if getSystemVar('messagemodule', FALSE) %}
                     {% include 'KaikmediaAdminLTETheme:StatusBar:admin.messages.html.twig' %}

@@ -14,8 +14,7 @@
 {% endmacro %}
 
 {% import _self as menu %}
-
-<div class="col-md-8 admintabs-container" id="admintabs-container">
+<div class="admintabs-container collapse navbar-collapse" id="admintabs-container">
     <ul id="admintabs" class="nav navbar-nav">
         {% for category in adminMenu %}
             <li class="dropdown droppable nowrap{% if caller.category.id == category.cid %} active{% endif %}"
