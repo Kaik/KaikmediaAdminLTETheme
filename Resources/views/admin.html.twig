@@ -20,11 +20,12 @@
                     </a>
                 </li>
                 <li>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#admintabs-container" aria-expanded="false">
-                       <span class="sr-only">Toggle navigation</span>
-                       <i class="fa fa-sitemap" aria-hidden="true"></i>
-                </button>
-                </li>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#admintabs-container" aria-expanded="false">
+                           <span class="sr-only">Toggle navigation</span>
+                           <i class="fa fa-sitemap" aria-hidden="true"></i>
+                    </button>
+                </li>               
+                {% include 'KaikmediaAdminLTETheme:StatusBar:admin.flashes.html.twig' %}
                 {{ include('@ZikulaAdminModule/Admin/systemNotices.html.twig') }}
                 {% if getSystemVar('messagemodule', FALSE) %}
                     {% include 'KaikmediaAdminLTETheme:StatusBar:admin.messages.html.twig' %}

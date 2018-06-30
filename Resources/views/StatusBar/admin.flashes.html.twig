@@ -1,0 +1,47 @@
+<!-- Notifications: style can be found in dropdown.less -->
+{% set cssMap={'error':'danger',
+             'warning':'warning',
+              'status':'success',
+              'danger':'danger',
+             'success':'success',
+                'info':'info'
+        }
+%}
+{% set flashtypes=app.session.flashbag.all %}
+{% set notifications=[] %}
+{% for type, flashtype in flashtypes %}
+    {% for message in flashtype %}
+        {% set notifications = notifications|merge({(loop.index0) : {'type': type, 'message': message} }) %}
+    {% endfor %}
+{% endfor %}
+
+<li class="dropdown notifications-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-bell-o"></i>
+        {% if notifications|length > 0 %}
+            <span class="label label-success">{{ notifications|length }}</span>
+        {% endif %}
+    </a>
+    <ul class="dropdown-menu">
+        <li class="header ">
+            {{ _fn('You have %1$d notification.', 'You have %1$d notifications.', notifications|length, {'%1$d' : notifications|length }, 'kaikmediaadminltetheme')  }}
+        </li>
+        <li>
+            <!-- inner menu: contains the actual data -->
+            <ul class="menu">
+                {% for notification in notifications %}
+                    <li class="list-group-item list-group-item-{{ attribute(cssMap, notification.type) is defined ? cssMap[notification.type] : 'info' }}" style="padding:10px 15px;">
+                           {{ notification.message }}
+                    </li>
+                {% else %}
+
+                {% endfor %}
+            </ul>
+        </li>
+        {% if notifications|length > 0 %}
+            <li class="footer">
+                <a href="#">{{ __('Clear all') }}</a>
+            </li>
+        {% endif %}
+    </ul>
+</li>
