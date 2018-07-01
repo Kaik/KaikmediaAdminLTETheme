@@ -1,0 +1,16 @@
+/*  looks better  */
+div.z-accountlink {
+    text-align: center;
+    float: left;
+    height : auto;
+    margin-bottom: 15px;
+}
+
+#z-maincontent div.z-admin-content {
+    background: none;
+    color: #333;
+    width: auto;
+    border: none;
+    /*border-top: solid;*/
+    padding: 0px;
+}

@@ -2,23 +2,6 @@
     float: none;
     margin: 7% auto;
 }
-/*  looks better  */
-div.z-accountlink {
-    text-align: center;
-    float: left;
-    height : auto;
-    margin-bottom: 15px;
-}
-
-#z-maincontent div.z-admin-content {
-    background: #fff;
-    color: #333;
-    width: auto;
-    border: 1px solid #ccc;
-    /*border-top: solid;*/
-    padding: 5px 1%;
-}
-
 .small-box h3 {
     color: #fff;
 }

@@ -9,6 +9,7 @@
         {% block head %}
         {% endblock %}
         {#  we want it to be the last ones to override some module styles      #}
+        <link href="{{ pageAddAsset('stylesheet', zasset("@KaikmediaAdminLTETheme:css/core_reset.css"), 200)  }}" rel="stylesheet" type="text/css" />
         <link href="{{ pageAddAsset('stylesheet', zasset("@KaikmediaAdminLTETheme:css/style.css"), 200)  }}" rel="stylesheet" type="text/css" />
     </head>
     {% block body %}
