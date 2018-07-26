@@ -2,7 +2,7 @@
 {#{% extends "KaikmediaAdminLTETheme:Layout:default.html.twig" %}#}
 {% block head %}
     {{ parent() }}
-    <link href="{{ pageAddAsset('stylesheet', zasset("almasaeed2010/adminlte/dist/css/skins/#{themevars.admin_skin}.min.css"), 98)  }}" rel="stylesheet" type="text/css" />
+    <link href="{{ pageAddAsset('stylesheet', zasset("@KaikmediaAdminLTETheme:almasaeed2010/adminlte/dist/css/skins/#{themevars.admin_skin}.min.css"), 98)  }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 {% block body %}
     <body class="hold-transition {{ themevars.admin_skin }} {{ themevars.admin_layout }} sidebar-mini">
@@ -72,4 +72,6 @@
 
         {% endblock %}
         {{ parent() }}
+        <script src="{{ pageAddAsset('javascript', zasset('@KaikmediaAdminLTETheme:almasaeed2010/adminlte/plugins/slimscroll/jquery.slimscroll.min.js'), 98)  }}"></script>
+        <script src="{{ pageAddAsset('javascript', zasset('@KaikmediaAdminLTETheme:js/admin.js'), 98)  }}"></script>
     {% endblock %}
