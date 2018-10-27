@@ -22,7 +22,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 /**
  * Implementation class for service definition loader using the DependencyInjection extension.
  */
-class KaikmediaAdminLteExtension extends Extension
+class KaikmediaAdminLTEExtension extends Extension
 {
     /**
      * Loads service definition file containing persistent event handlers.
