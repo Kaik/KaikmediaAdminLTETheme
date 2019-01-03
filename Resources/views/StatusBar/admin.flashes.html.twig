@@ -24,7 +24,7 @@
     </a>
     <ul class="dropdown-menu">
         <li class="header ">
-            {{ _fn('You have %1$d notification.', 'You have %1$d notifications.', notifications|length, {'%1$d' : notifications|length }, 'kaikmediaadminltetheme')  }}
+        {{ '{0} Notifications|{1} You have one notification|]1,Inf[ You have %unread_count% notifications'|transchoice(notifications|length,{}, 'kaikmediaadminltetheme') }}
         </li>
         <li>
             <!-- inner menu: contains the actual data -->

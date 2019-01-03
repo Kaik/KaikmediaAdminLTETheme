@@ -27,9 +27,9 @@ class MasterMenu implements ContainerAwareInterface
         $permApi = $this->container->get('zikula_permissions_module.api.permission');
         $menu = $factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
-        $menu->addChild($this->__('Home'), ['route' => 'home']);
-        $menu->addChild($this->__('Account'), ['route' => 'zikulausersmodule_account_menu']);
-        $menu->addChild($this->__('Logout'), ['route' => 'zikulausersmodule_account_menu']);
+        $menu->addChild($this->__('Home', 'zikula'), ['route' => 'home']);
+        $menu->addChild($this->__('Account', 'zikula'), ['route' => 'zikulausersmodule_account_menu']);
+        $menu->addChild($this->__('Logout', 'zikula'), ['route' => 'zikulausersmodule_account_menu']);
         return $menu;
     }
 
